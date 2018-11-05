@@ -1,30 +1,20 @@
 package emailapp;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Email {
 	Random random = new Random();
-	Scanner sc = new Scanner(System.in);
 	String firstName, lastName, email, password;
 	int mailboxCap;
 	final static String COMPANY = "samsonite", CHAR_LIST = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	
-	public Email()
+	public Email(String firstName, String lastName, String department)
 	{
-		firstName = askForString("Insert first name");
-		lastName = askForString("Insert last name");
-		String department = askForString("Insert department");
-		email = firstName + "." + lastName + "@" + department + "." + COMPANY + ".com";
+		this.firstName = firstName;
+		this.lastName = lastName;
+		email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department.toLowerCase() + "." + COMPANY + ".com";
 		password = createPassword();
 		mailboxCap = 10;
-	}
-	
-	private String askForString(String question)
-	{
-		System.out.println(question);
-		System.out.print(">");
-		return sc.next();
 	}
 	
 	private String createPassword()
