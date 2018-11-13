@@ -17,7 +17,7 @@ public class Student {
 		studentId = generateId(year);
 		balance = 2000f;
 		System.out.println("CREATED STUDENT: " + firstName + " " + lastName + " " + year + " " + studentId);
-		enrolled = new ArrayList();
+		enrolled = new ArrayList<String>();
 	}
 	
 	private String generateId(int year)
